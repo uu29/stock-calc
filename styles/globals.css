@@ -1,9 +1,17 @@
-html,
+html {
+  font-size: 10px;
+}
+
 body {
+  font-size: 1.5rem;
+}
+
+html,
+body,
+p {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -13,4 +21,63 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+figure {
+  margin: 0;
+}
+
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+ul,
+ol,
+dd {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: 1;
+  color: inherit;
+}
+
+div,
+li,
+a,
+span {
+  color: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+button,
+input {
+  background: transparent;
+  outline: 0 none;
+  border: 0 none;
+  font-size: inherit;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 9.5px;
+  }
 }
