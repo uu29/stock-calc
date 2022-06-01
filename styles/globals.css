@@ -3,15 +3,17 @@ html {
 }
 
 body {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 html,
 body,
+div,
 p {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: inherit;
 }
 
 a {

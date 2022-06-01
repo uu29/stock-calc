@@ -1,5 +1,5 @@
 import baseStyled, { DefaultTheme, css, ThemedStyledInterface } from "styled-components";
-import { Device, Media } from "./styled";
+import { Colors, Device, Media } from "./styled";
 
 type BackQuoteArgs = string[];
 
@@ -48,9 +48,16 @@ Object.keys(device).reduce((acc: Media, label: string) => {
   return acc;
 }, media);
 
+const colors: Colors = {
+  mainOrange: "#FF5C00",
+  plusRed: "#FF0F00",
+  minusBlue: "#0075FF",
+};
+
 const globalTheme: DefaultTheme = {
   device,
   media,
+  colors,
 };
 
 export const styled = baseStyled as ThemedStyledInterface<DefaultTheme>;
