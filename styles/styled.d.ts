@@ -18,6 +18,16 @@ export interface Colors {
   mainOrange: string;
   plusRed: string;
   minusBlue: string;
+  inactiveGray: string;
+  activeBlack: string;
+}
+
+export interface FontSize {
+  input: {
+    small: string;
+    medium: string;
+    large: string;
+  };
 }
 
 // and extend theme!
@@ -27,5 +37,6 @@ declare module "styled-components" {
     device: Device;
     media: Media;
     colors: Colors;
+    fontSize: FontSize;
   }
 }

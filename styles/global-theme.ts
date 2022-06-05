@@ -1,5 +1,5 @@
 import baseStyled, { DefaultTheme, css, ThemedStyledInterface } from "styled-components";
-import { Colors, Device, Media } from "./styled";
+import { Colors, Device, FontSize, Media } from "./styled";
 
 type BackQuoteArgs = string[];
 
@@ -52,12 +52,23 @@ const colors: Colors = {
   mainOrange: "#FF5C00",
   plusRed: "#FF0F00",
   minusBlue: "#0075FF",
+  inactiveGray: "#B8BBBE",
+  activeBlack: "#000",
+};
+
+const fontSize: FontSize = {
+  input: {
+    small: "1.8rem",
+    medium: "2rem",
+    large: "3.2rem",
+  },
 };
 
 const globalTheme: DefaultTheme = {
   device,
   media,
   colors,
+  fontSize,
 };
 
 export const styled = baseStyled as ThemedStyledInterface<DefaultTheme>;

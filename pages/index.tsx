@@ -19,7 +19,7 @@ const Home = () => {
 
 const AppTitle = styled.h1`
   margin: 1rem;
-  font-size: 1.6rem;
+  font-size: 2.2rem;
   font-weight: 600;
   text-align: center;
 `;
@@ -29,8 +29,10 @@ const Strong = styled.strong`
 `;
 
 const MainDescription = styled.p`
-  max-width: 40rem;
+  max-width: 58rem;
   margin: 3rem auto 0;
-  padding: 0 1.3rem;
+  padding: 0 1.6rem;
+  font-size: 1.4rem;
 `;
+
 export default Home;
