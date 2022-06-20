@@ -1,4 +1,5 @@
 import baseStyled, { DefaultTheme, css, ThemedStyledInterface } from "styled-components";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars,import/named
 import { Colors, Device, FontSize, Media } from "./styled";
 
 type BackQuoteArgs = string[];
@@ -10,8 +11,11 @@ export const device: Device = {
 };
 
 const media: Media = {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   mobile: (...args: BackQuoteArgs) => undefined,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   tablet: (...args: BackQuoteArgs) => undefined,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   pc: (...args: BackQuoteArgs) => undefined,
 };
 
@@ -49,16 +53,17 @@ Object.keys(device).reduce((acc: Media, label: string) => {
 }, media);
 
 const colors: Colors = {
-  mainOrange: "#FF5C00",
-  plusRed: "#FF0F00",
-  minusBlue: "#0075FF",
-  inactiveGray: "#B8BBBE",
+  mainOrange: "#ff5c00",
+  plusRed: "#ff0f00",
+  minusBlue: "#0075ff",
+  inactiveGray: "#b8bbbe",
   activeBlack: "#000",
+  inputGray: "#f6f7f8",
 };
 
 const fontSize: FontSize = {
   input: {
-    small: "1.8rem",
+    small: "1.6rem",
     medium: "2rem",
     large: "3.2rem",
   },

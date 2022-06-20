@@ -27,25 +27,59 @@ const Calculator = () => {
         <ul>
           <SectionItem>
             <SectionTitle>최종 평단가</SectionTitle>
-            <SectionLine>
+            <SectionRightLine>
               <Value value={0} theme={valueTextTheme.large} />
-            </SectionLine>
-            <SectionLine>
+            </SectionRightLine>
+            <SectionRightLine>
               <Label>최종 매수 금액</Label>
               <Value value={0} theme={valueTextTheme.small} />
-            </SectionLine>
-            <SectionLine>
+            </SectionRightLine>
+            <SectionRightLine>
               <Label>최종 수량</Label>
               <Value value={0} theme={valueTextTheme.small} />
-            </SectionLine>
-            <SectionLine>
+            </SectionRightLine>
+            <SectionRightLine>
               <Label>손익률</Label>
               <Value value={0} theme={valueTextTheme.small} />
-            </SectionLine>
-            <SectionLine>
+            </SectionRightLine>
+            <SectionRightLine>
               <Label>손익금</Label>
               <Value value={0} theme={valueTextTheme.small} />
-            </SectionLine>
+            </SectionRightLine>
+          </SectionItem>
+          <SectionItem>
+            <SectionTitle>현재 보유 주식</SectionTitle>
+            <SectionInputLine>
+              <InputLabel>현재 시장가</InputLabel>
+              <InputValue value={0} />
+            </SectionInputLine>
+            <SectionInputLine>
+              <InputLabel>보유주식 평단가</InputLabel>
+              <InputValue value={0} />
+            </SectionInputLine>
+            <SectionInputLine>
+              <InputLabel>보유 수량</InputLabel>
+              <InputValue value={0} />
+            </SectionInputLine>
+            <SectionRightLine>
+              <LabelBlock>총 매입 금액</LabelBlock>
+              <Value value={0} theme={valueTextTheme.small} />
+            </SectionRightLine>
+          </SectionItem>
+          <SectionItem>
+            <SectionTitle>추가 매수</SectionTitle>
+            <SectionInputLine>
+              <InputLabel>추매 평단가</InputLabel>
+              <InputValue value={0} />
+            </SectionInputLine>
+            <SectionInputLine>
+              <InputLabel>추매 수량</InputLabel>
+              <InputValue value={0} />
+            </SectionInputLine>
+            <SectionRightLine>
+              <LabelBlock>총 추매 금액</LabelBlock>
+              <Value value={0} theme={valueTextTheme.small} />
+            </SectionRightLine>
           </SectionItem>
         </ul>
       </Form>
@@ -65,21 +99,55 @@ const Form = styled.form`
   margin-top: 3rem;
 `;
 
-const SectionItem = styled.li``;
+const SectionItem = styled.li`
+  margin-bottom: 4rem;
+`;
 
-const SectionLine = styled.div`
+const SectionRightLine = styled.div`
   text-align: right;
+  margin-bottom: 6px;
 `;
 
 const SectionTitle = styled.h2`
-  padding-bottom: 3px;
-  font-size: 1.6rem;
+  padding-bottom: 6px;
   border-bottom: 2px solid #151515;
+  margin-bottom: 6px;
 `;
 
 const Label = styled.span`
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: ${({ theme }) => theme.colors.inactiveGray};
+`;
+
+const LabelBlock = styled.div`
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1.3rem;
+  color: ${({ theme }) => theme.colors.inactiveGray};
+`;
+
+const SectionInputLine = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 1.2rem 0;
+`;
+
+const InputLabel = styled.label`
+  display: block;
+  width: 15rem;
+  line-height: 1.4;
+  font-size: 1.5rem;
+`;
+
+const InputValue = styled.input`
+  display: block;
+  padding: 1rem;
+  flex: 1 0 0;
+  background: ${({ theme }) => theme.colors.inputGray};
+  border-radius: 4px;
+  line-height: 1.4;
+  text-align: right;
+  font-size: ${({ theme }) => theme.fontSize.input.small};
 `;
 
 const Refresh = styled.button`

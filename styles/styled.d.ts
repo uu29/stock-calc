@@ -1,5 +1,4 @@
 import "styled-components";
-import { IScoreColorset } from "components/common/score";
 import { CSSProp } from "styled-components";
 
 interface Device {
@@ -20,6 +19,7 @@ export interface Colors {
   minusBlue: string;
   inactiveGray: string;
   activeBlack: string;
+  inputGray: string;
 }
 
 export interface FontSize {

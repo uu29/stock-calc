@@ -63,8 +63,7 @@ span {
   font-weight: inherit;
 }
 
-button,
-input {
+button, input, label {
   background: transparent;
   outline: 0 none;
   border: 0 none;
@@ -72,8 +71,7 @@ input {
   text-align: inherit;
 }
 
-button,
-a {
+button, a {
   cursor: pointer;
 }
 
