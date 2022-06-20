@@ -14,6 +14,10 @@ const Calculator = () => {
               <Value value={0} theme={valueTextTheme.large} />
             </SectionRightLine>
             <SectionRightLine>
+              <Label>매수 총액</Label>
+              <Value value={0} theme={valueTextTheme.small} />
+            </SectionRightLine>
+            <SectionRightLine>
               <Label>최종 매수 금액</Label>
               <Value value={0} theme={valueTextTheme.small} />
             </SectionRightLine>
