@@ -7,7 +7,7 @@ export const Value = ({ value, theme = valueTextTheme.medium }: InputValueProps)
     {value}
   </ValueText>
 );
-const CurrentAccount = () => {
+const CurrentStock = () => {
   return (
     <SectionItem>
       <SectionTitle>현재 보유 주식</SectionTitle>
@@ -31,4 +31,4 @@ const CurrentAccount = () => {
   );
 };
 
-export default CurrentAccount;
+export default CurrentStock;

@@ -1,5 +1,5 @@
 import { CalculatorContainer, Form, InputLabel, InputValue, Label, LabelBlock, Refresh, SectionInputLine, SectionItem, SectionRightLine, SectionTitle } from "./CalculatorStyle";
-import CurrentAccount, { Value } from "./CurrentAccount";
+import CurrentStock, { Value } from "./CurrentStock";
 import { valueTextTheme } from "./interface";
 
 const Calculator = () => {
@@ -34,7 +34,7 @@ const Calculator = () => {
               <Value value={0} theme={valueTextTheme.small} />
             </SectionRightLine>
           </SectionItem>
-          <CurrentAccount />
+          <CurrentStock />
           <SectionItem>
             <SectionTitle>추가 매수</SectionTitle>
             <SectionInputLine>
