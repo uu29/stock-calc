@@ -1,19 +1,20 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { FeatureKey } from "../../featureKey";
+import { act } from "react-dom/test-utils";
 
 export const totalStock = {
-  average: "average",
-  amount: "amount",
-  ror: "ror",
+  total_average: "total_average",
+  total_amount: "total_amount",
+  total_ror: "total_ror",
   total_quantity: "total_quantity",
 } as const;
 
 export type TotalStockType = typeof totalStock[keyof typeof totalStock];
 
 export interface ITotalStock {
-  average: number;
-  amount: number;
-  ror: number;
+  total_average: number;
+  total_amount: number;
+  total_ror: number;
   total_quantity: number;
 }
 
@@ -49,11 +50,15 @@ export interface HomeState {
   trading_stock: ITradingStock;
 }
 
+export interface FormPayload {
+  [key: string]: number;
+}
+
 export const initialState: HomeState = {
   total_stock: {
-    average: 0,
-    amount: 0,
-    ror: 0,
+    total_average: 0,
+    total_amount: 0,
+    total_ror: 0,
     total_quantity: 0,
   },
   current_stock: {
@@ -75,10 +80,10 @@ export const homeSlice = createSlice({
       state.total_stock = { ...action.payload };
     },
     setCurrentStock(state, action: PayloadAction<ICurrentStock>) {
-      state.current_stock = { ...action.payload };
+      state.current_stock = { ...state, ...action.payload };
     },
     setTradingStock(state, action: PayloadAction<ITradingStock>) {
-      state.trading_stock = { ...action.payload };
+      state.trading_stock = { ...state, ...action.payload };
     },
   },
 });

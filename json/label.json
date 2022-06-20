@@ -1,0 +1,11 @@
+{
+  "total_average": "매수 총액",
+  "total_amount":"매수 총액",
+  "total_ror": "수익률",
+  "total_quantity":"수익금",
+  "market_price": "현재 시장가",
+  "purchase_price": "내 평단가",
+  "holding_quantity": "보유 수량",
+  "trading_price": "추매 평단가",
+  "trading_quantity": "추매 수량"
+}
