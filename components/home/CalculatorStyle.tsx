@@ -74,7 +74,7 @@ export const Refresh = styled.button`
   background-size: contain;
 `;
 
-export const ValueText = styled.span<{ isActive: boolean; textTheme: ValueTextTheme }>`
+export const ReadOnlyValueText = styled.span<{ isActive: boolean; textTheme: ValueTextTheme }>`
   display: inline-block;
   margin-left: 8px;
   color: ${({ isActive, theme }) => (isActive ? theme.colors.activeBlack : theme.colors.inactiveGray)};

@@ -6,7 +6,7 @@ export const valueTextTheme = {
 
 export type ValueTextTheme = typeof valueTextTheme[keyof typeof valueTextTheme];
 
-export interface InputValueProps {
+export interface ReadOnlyValueProps {
   value: number;
-  theme: ValueTextTheme;
+  theme?: ValueTextTheme;
 }

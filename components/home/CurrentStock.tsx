@@ -1,16 +1,16 @@
 import { useDispatch, useSelector } from "react-redux";
-import { InputLabel, InputValue, LabelBlock, SectionInputLine, SectionItem, SectionRightLine, SectionTitle, ValueText } from "./CalculatorStyle";
-import { InputValueProps, valueTextTheme } from "./interface";
+import { InputLabel, InputValue, LabelBlock, SectionInputLine, SectionItem, SectionRightLine, SectionTitle, ReadOnlyValueText } from "./CalculatorStyle";
+import { ReadOnlyValueProps, valueTextTheme } from "./interface";
 import { State } from "store/slices";
 import { CurrentStockType, setCurrentStock, SetStockParams } from "store/slices/home/reducer";
 import React, { useEffect, useState } from "react";
 import label from "json/label.json";
 import { numberWithCommas } from "../../lib/function";
 
-export const Value = React.memo(({ value, theme = valueTextTheme.medium }: InputValueProps) => (
-  <ValueText isActive={value > 0} textTheme={theme}>
-    {value}
-  </ValueText>
+export const ReadOnlyValue = React.memo(({ value, theme = valueTextTheme.medium }: ReadOnlyValueProps) => (
+  <ReadOnlyValueText isActive={value > 0} textTheme={theme}>
+    {numberWithCommas(value)}
+  </ReadOnlyValueText>
 ));
 
 type ChangeCallbackType = ({ params }: SetStockParams) => void;
@@ -51,6 +51,7 @@ const InputValueContainer = React.memo(({ inputLabel, inputName, inputValue, cha
 
 const CurrentStock = () => {
   const currentStock = useSelector((state: State) => state.home.current_stock);
+  const currentTotalAmount = currentStock.holding_quantity * currentStock.purchase_price;
   const currentStockKeys = Object.keys(currentStock) as CurrentStockType[];
   const dispatch = useDispatch();
 
@@ -61,12 +62,12 @@ const CurrentStock = () => {
   return (
     <SectionItem>
       <SectionTitle>현재 보유 주식</SectionTitle>
-      {currentStockKeys.map((name: CurrentStockType) => (
-        <InputValueContainer key={name} inputLabel={label[name]} inputName={name} inputValue={currentStock[name]} changeCallback={changeCallback} />
+      {currentStockKeys.map((keyName: CurrentStockType) => (
+        <InputValueContainer key={keyName} inputLabel={label[keyName]} inputName={keyName} inputValue={currentStock[keyName]} changeCallback={changeCallback} />
       ))}
       <SectionRightLine>
-        <LabelBlock>총 매입 금액</LabelBlock>
-        <Value value={0} theme={valueTextTheme.small} />
+        <LabelBlock>{label.current_total_amount}</LabelBlock>
+        <ReadOnlyValue value={currentTotalAmount} theme={valueTextTheme.small} />
       </SectionRightLine>
     </SectionItem>
   );
