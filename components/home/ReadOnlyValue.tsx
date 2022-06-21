@@ -1,11 +1,19 @@
 import React from "react";
-import { ReadOnlyValueProps, valueTextTheme } from "./interface";
-import { ReadOnlyValueText } from "./CalculatorStyle";
-import { numberWithCommas } from "lib/function";
+import { ValueColorTheme, ValueTextTheme, valueTextTheme } from "./interface";
+import { ReadOnlyValueText, UnitText } from "./CalculatorStyle";
 
-const ReadOnlyValue = React.memo(({ value, theme = valueTextTheme.medium }: ReadOnlyValueProps) => (
-  <ReadOnlyValueText isActive={value > 0} textTheme={theme}>
-    {numberWithCommas(value)}
+interface ReadOnlyValueProps {
+  value: number | string;
+  colorTheme: ValueColorTheme;
+  theme?: ValueTextTheme;
+  unit?: string;
+  fontWeight?: string | number;
+}
+
+const ReadOnlyValue = React.memo(({ value, colorTheme, theme = valueTextTheme.medium, unit, fontWeight }: ReadOnlyValueProps) => (
+  <ReadOnlyValueText colorTheme={colorTheme} textTheme={theme} fontWeight={fontWeight}>
+    {value}
+    {unit && <UnitText>{unit}</UnitText>}
   </ReadOnlyValueText>
 ));
 

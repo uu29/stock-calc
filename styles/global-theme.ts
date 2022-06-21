@@ -52,12 +52,12 @@ Object.keys(device).reduce((acc: Media, label: string) => {
   return acc;
 }, media);
 
-const colors: Colors = {
-  mainOrange: "#ff5c00",
-  plusRed: "#ff0f00",
-  minusBlue: "#0075ff",
-  inactiveGray: "#b8bbbe",
-  activeBlack: "#000",
+export const colors: Colors = {
+  main: "#ff5c00",
+  plus: "#ff0f00",
+  minus: "#0075ff",
+  inactive: "#b8bbbe",
+  active: "#000",
   inputGray: "#f6f7f8",
 };
 

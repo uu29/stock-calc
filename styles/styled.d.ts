@@ -14,11 +14,11 @@ interface Media {
 }
 
 export interface Colors {
-  mainOrange: string;
-  plusRed: string;
-  minusBlue: string;
-  inactiveGray: string;
-  activeBlack: string;
+  main: string;
+  plus: string;
+  minus: string;
+  inactive: string;
+  active: string;
   inputGray: string;
 }
 

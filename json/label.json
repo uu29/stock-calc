@@ -5,6 +5,7 @@
   "total_quantity":"수익금",
   "market_price": "현재 시장가",
   "current_total_amount": "총 매입 금액",
+  "current_ror": "현재 수익률",
   "purchase_price": "내 평단가",
   "holding_quantity": "보유 수량",
   "trading_price": "추매 평단가",

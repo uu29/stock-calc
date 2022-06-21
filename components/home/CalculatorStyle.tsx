@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { ValueTextTheme } from "./interface";
+import styled, { css } from "styled-components";
+import { ValueColorTheme, ValueTextTheme } from "./interface";
 
 export const CalculatorContainer = styled.div`
   max-width: 58rem;
@@ -19,7 +19,7 @@ export const SectionItem = styled.li`
 
 export const SectionRightLine = styled.div`
   text-align: right;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 `;
 
 export const SectionTitle = styled.h2`
@@ -30,7 +30,7 @@ export const SectionTitle = styled.h2`
 
 export const Label = styled.span`
   font-size: 1.3rem;
-  color: ${({ theme }) => theme.colors.inactiveGray};
+  color: ${({ theme }) => theme.colors.inactive};
 `;
 
 export const SectionInputLine = styled.div`
@@ -41,9 +41,8 @@ export const SectionInputLine = styled.div`
 
 export const LabelBlock = styled.div`
   display: block;
-  margin-bottom: 5px;
   font-size: 1.3rem;
-  color: ${({ theme }) => theme.colors.inactiveGray};
+  color: ${({ theme }) => theme.colors.inactive};
 `;
 
 export const InputLabel = styled.label`
@@ -74,10 +73,21 @@ export const Refresh = styled.button`
   background-size: contain;
 `;
 
-export const ReadOnlyValueText = styled.span<{ isActive: boolean; textTheme: ValueTextTheme }>`
+export const ReadOnlyValueText = styled.span<{ textTheme: ValueTextTheme; colorTheme: ValueColorTheme; fontWeight?: string | number }>`
   display: inline-block;
+  margin-top: 2px;
   margin-left: 8px;
-  color: ${({ isActive, theme }) => (isActive ? theme.colors.activeBlack : theme.colors.inactiveGray)};
+  color: ${({ theme, colorTheme }) => theme.colors[colorTheme]};
   font-size: ${({ theme, textTheme }) => theme.fontSize.input[textTheme]};
-  font-weight: 600;
+  ${({ fontWeight }) =>
+    fontWeight &&
+    css`
+      font-weight: ${fontWeight};
+    `};
+`;
+
+export const UnitText = styled.span`
+  margin-left: 1px;
+  color: inherit;
+  font-size: 1.4rem;
 `;

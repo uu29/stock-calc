@@ -25,7 +25,7 @@ const AppTitle = styled.h1`
 `;
 
 const Strong = styled.strong`
-  color: ${({ theme }) => theme.colors.mainOrange};
+  color: ${({ theme }) => theme.colors.main};
 `;
 
 const MainDescription = styled.p`
