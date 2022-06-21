@@ -10,5 +10,5 @@
   "holdingQuantity": "보유 수량",
   "tradingPrice": "추매 평단가",
   "tradingQuantity": "추매 수량",
-  "trading_totalAmount": "총 추매 금액"
+  "tradingTotalAmount": "총 추매 금액"
 }

@@ -35,6 +35,7 @@ export type CurrentStockType = typeof currentStock[keyof typeof currentStock];
 export const tradingStock = {
   tradingPrice: "tradingPrice",
   tradingQuantity: "tradingQuantity",
+  tradingTotalAmount: "tradingTotalAmount",
 } as const;
 
 export type TradingStockType = typeof tradingStock[keyof typeof tradingStock];
@@ -42,6 +43,7 @@ export type TradingStockType = typeof tradingStock[keyof typeof tradingStock];
 export interface ITradingStock {
   tradingPrice: number;
   tradingQuantity: number;
+  tradingTotalAmount: number;
 }
 
 export interface HomeState {

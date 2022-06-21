@@ -7,12 +7,13 @@ import label from "json/label.json";
 import ReadOnlyValue from "./ReadOnlyValue";
 import InputValueContainer from "./InputValueContainer";
 import { numberWithCommas } from "lib/function";
-import { TradingStockType } from "store/slices/home/interface";
+import { CurrentStockType, tradingStock, TradingStockType } from "store/slices/home/interface";
 
 const TradingStock = () => {
   const stockData = useSelector((state: State) => state.home.tradingStock);
+  const readOnlyKeys = [tradingStock.tradingTotalAmount] as TradingStockType[];
   const totalAmount = stockData.tradingQuantity * stockData.tradingPrice;
-  const stockDataKeys = Object.keys(stockData) as TradingStockType[];
+  const stockDataKeys = Object.keys(stockData).filter((keyName) => !readOnlyKeys.includes(keyName as TradingStockType)) as TradingStockType[];
   const dispatch = useDispatch();
 
   const changeCallback = (params: SetStockParams) => {
@@ -26,7 +27,7 @@ const TradingStock = () => {
         <InputValueContainer key={keyName} inputLabel={label[keyName]} inputName={keyName} inputValue={stockData[keyName]} changeCallback={changeCallback} />
       ))}
       <SectionRightLine>
-        <LabelBlock>{label.trading_totalAmount}</LabelBlock>
+        <LabelBlock>{label.tradingTotalAmount}</LabelBlock>
         <ReadOnlyValue value={numberWithCommas(totalAmount)} colorTheme={totalAmount > 0 ? valueColorTheme.active : valueColorTheme.inactive} theme={valueTextTheme.small} />
       </SectionRightLine>
     </SectionItem>
