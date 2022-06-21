@@ -1,14 +1,14 @@
 {
-  "total_average": "매수 총액",
-  "total_amount":"매수 총액",
-  "total_ror": "수익률",
-  "total_quantity":"수익금",
-  "market_price": "현재 시장가",
-  "current_total_amount": "총 매입 금액",
-  "current_ror": "현재 수익률",
-  "purchase_price": "내 평단가",
-  "holding_quantity": "보유 수량",
-  "trading_price": "추매 평단가",
-  "trading_quantity": "추매 수량",
-  "trading_total_amount": "총 추매 금액"
+  "totalAverage": "매수 총액",
+  "totalAmount":"매수 총액",
+  "totalRor": "수익률",
+  "totalQuantity":"수익금",
+  "marketPrice": "현재 시장가",
+  "currentTotalAmount": "총 매입 금액",
+  "currentRor": "현재 수익률",
+  "purchasePrice": "내 평단가",
+  "holdingQuantity": "보유 수량",
+  "tradingPrice": "추매 평단가",
+  "tradingQuantity": "추매 수량",
+  "trading_totalAmount": "총 추매 금액"
 }

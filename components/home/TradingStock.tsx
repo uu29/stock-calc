@@ -9,8 +9,8 @@ import InputValueContainer from "./InputValueContainer";
 import { numberWithCommas } from "../../lib/function";
 
 const TradingStock = () => {
-  const stockData = useSelector((state: State) => state.home.trading_stock);
-  const totalAmount = stockData.trading_quantity * stockData.trading_price;
+  const stockData = useSelector((state: State) => state.home.tradingStock);
+  const totalAmount = stockData.tradingQuantity * stockData.tradingPrice;
   const stockDataKeys = Object.keys(stockData) as TradingStockType[];
   const dispatch = useDispatch();
 
@@ -25,7 +25,7 @@ const TradingStock = () => {
         <InputValueContainer key={keyName} inputLabel={label[keyName]} inputName={keyName} inputValue={stockData[keyName]} changeCallback={changeCallback} />
       ))}
       <SectionRightLine>
-        <LabelBlock>{label.trading_total_amount}</LabelBlock>
+        <LabelBlock>{label.trading_totalAmount}</LabelBlock>
         <ReadOnlyValue value={numberWithCommas(totalAmount)} colorTheme={totalAmount > 0 ? valueColorTheme.active : valueColorTheme.inactive} theme={valueTextTheme.small} />
       </SectionRightLine>
     </SectionItem>

@@ -13,9 +13,10 @@ interface InputValueContainerProps {
   inputName: string;
   inputValue: number;
   changeCallback: ChangeCallbackType;
+  readOnly?: boolean;
 }
 
-const InputValueContainer = React.memo(({ inputLabel, inputName, inputValue, changeCallback }: InputValueContainerProps) => {
+const InputValueContainer = React.memo(({ inputLabel, inputName, inputValue, changeCallback, readOnly }: InputValueContainerProps) => {
   const [displayValue, setDisplayValue] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -34,7 +35,7 @@ const InputValueContainer = React.memo(({ inputLabel, inputName, inputValue, cha
   return (
     <SectionInputLine>
       <InputLabel htmlFor={inputName}>{inputLabel}</InputLabel>
-      <InputValue type="text" id={inputName} name={inputName} value={displayValue} onChange={handleChange} />
+      <InputValue type="text" id={inputName} name={inputName} value={displayValue} onChange={handleChange} readOnly={readOnly} />
     </SectionInputLine>
   );
 });
