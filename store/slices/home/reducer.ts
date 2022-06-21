@@ -20,6 +20,7 @@ export const initialState: HomeState = {
   tradingStock: {
     tradingPrice: 0,
     tradingQuantity: 0,
+    tradingTotalAmount: 0,
   },
 };
 
