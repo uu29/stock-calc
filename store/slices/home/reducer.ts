@@ -81,7 +81,7 @@ export const homeSlice = createSlice({
     setCurrentStock(state, action: PayloadAction<SetStockParams>) {
       state.current_stock = { ...state.current_stock, ...action.payload };
     },
-    setTradingStock(state, action: PayloadAction<ITradingStock>) {
+    setTradingStock(state, action: PayloadAction<SetStockParams>) {
       state.trading_stock = { ...state.trading_stock, ...action.payload };
     },
   },

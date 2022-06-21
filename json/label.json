@@ -8,5 +8,6 @@
   "purchase_price": "내 평단가",
   "holding_quantity": "보유 수량",
   "trading_price": "추매 평단가",
-  "trading_quantity": "추매 수량"
+  "trading_quantity": "추매 수량",
+  "trading_total_amount": "총 추매 금액"
 }

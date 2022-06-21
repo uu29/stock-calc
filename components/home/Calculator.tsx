@@ -1,6 +1,8 @@
-import { CalculatorContainer, Form, InputLabel, Label, LabelBlock, Refresh, SectionInputLine, SectionItem, SectionRightLine, SectionTitle } from "./CalculatorStyle";
-import CurrentStock, { ReadOnlyValue } from "./CurrentStock";
+import { CalculatorContainer, Form, Label, Refresh, SectionItem, SectionRightLine, SectionTitle } from "./CalculatorStyle";
+import CurrentStock from "./CurrentStock";
 import { valueTextTheme } from "./interface";
+import ReadOnlyValue from "./ReadOnlyValue";
+import TradingStock from "./TradingStock";
 
 const Calculator = () => {
   return (
@@ -35,21 +37,7 @@ const Calculator = () => {
             </SectionRightLine>
           </SectionItem>
           <CurrentStock />
-          <SectionItem>
-            <SectionTitle>추가 매수</SectionTitle>
-            <SectionInputLine>
-              <InputLabel>추매 평단가</InputLabel>
-              <ReadOnlyValue value={0} />
-            </SectionInputLine>
-            <SectionInputLine>
-              <InputLabel>추매 수량</InputLabel>
-              <ReadOnlyValue value={0} />
-            </SectionInputLine>
-            <SectionRightLine>
-              <LabelBlock>총 추매 금액</LabelBlock>
-              <ReadOnlyValue value={0} theme={valueTextTheme.small} />
-            </SectionRightLine>
-          </SectionItem>
+          <TradingStock />
         </ul>
       </Form>
     </CalculatorContainer>
