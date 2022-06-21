@@ -2,12 +2,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { LabelBlock, SectionItem, SectionRightLine, SectionTitle } from "./CalculatorStyle";
 import { valueColorTheme, valueTextTheme } from "./interface";
 import { State } from "store/slices";
-import { currentStock, CurrentStockType, setCurrentStock, SetStockParams } from "store/slices/home/reducer";
+import { setCurrentStock, SetStockParams } from "store/slices/home/reducer";
 import label from "json/label.json";
 import ReadOnlyValue from "./ReadOnlyValue";
 import InputValueContainer from "./InputValueContainer";
-import { numberWithCommas } from "../../lib/function";
+import { numberWithCommas } from "lib/function";
 import { useCallback } from "react";
+import { currentStock, CurrentStockType } from "store/slices/home/interface";
 
 const CurrentStock = () => {
   const stockData = useSelector((state: State) => state.home.currentStock);

@@ -1,5 +1,6 @@
 import { combineReducers, AnyAction } from "@reduxjs/toolkit";
-import home, { HomeState } from "./home/reducer";
+import home from "./home/reducer";
+import { HomeState } from "./home/interface";
 
 export interface State {
   home: HomeState;
