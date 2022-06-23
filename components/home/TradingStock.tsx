@@ -11,7 +11,7 @@ import { tradingStock, TradingStockType } from "store/slices/home/interface";
 
 const TradingStock = () => {
   const stockData = useSelector((state: State) => state.home.tradingStock);
-  const readOnlyKeys = [tradingStock.tradingTotalAmount] as TradingStockType[];
+  const readOnlyKeys = [tradingStock.tradingTotalAmount, tradingStock.tradingRor] as TradingStockType[];
   const stockDataKeys = Object.keys(stockData).filter((keyName) => !readOnlyKeys.includes(keyName as TradingStockType)) as TradingStockType[];
   const dispatch = useDispatch();
 
@@ -31,6 +31,16 @@ const TradingStock = () => {
           value={numberWithCommas(stockData.tradingTotalAmount)}
           colorTheme={stockData.tradingTotalAmount > 0 ? valueColorTheme.active : valueColorTheme.inactive}
           theme={valueTextTheme.small}
+        />
+      </SectionRightLine>
+      <SectionRightLine>
+        <LabelBlock>{label.tradingRor}</LabelBlock>
+        <ReadOnlyValue
+          value={numberWithCommas(parseFloat(stockData.tradingRor.toFixed(2)))}
+          colorTheme={stockData.tradingRor > 0 ? valueColorTheme.plus : stockData.tradingRor === 0 ? valueColorTheme.inactive : valueColorTheme.minus}
+          theme={valueTextTheme.small}
+          fontWeight={600}
+          unit="%"
         />
       </SectionRightLine>
     </SectionItem>

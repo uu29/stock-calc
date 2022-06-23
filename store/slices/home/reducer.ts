@@ -7,7 +7,6 @@ export const initialState: HomeState = {
   totalStock: {
     totalAverage: 0,
     totalAmount: 0,
-    totalRor: 0,
     totalQuantity: 0,
   },
   currentStock: {
@@ -21,6 +20,7 @@ export const initialState: HomeState = {
     tradingPrice: 0,
     tradingQuantity: 0,
     tradingTotalAmount: 0,
+    tradingRor: 0,
   },
 };
 
@@ -48,7 +48,7 @@ export const homeSlice = createSlice({
       state.totalStock.totalAmount = totalAmountSum;
       state.totalStock.totalQuantity = totalQuantitySum;
       state.totalStock.totalAverage = totalAverage;
-      state.totalStock.totalRor = getRor(state.currentStock.marketPrice, totalAverage);
+      if (state.tradingStock.tradingTotalAmount > 0) state.tradingStock.tradingRor = getRor(state.currentStock.marketPrice, totalAverage);
     },
     setTradingStock(state, action: PayloadAction<SetStockParams>) {
       state.tradingStock = { ...state.tradingStock, ...action.payload };
@@ -57,10 +57,10 @@ export const homeSlice = createSlice({
       const totalAmountSum = sum(state.currentStock.currentTotalAmount, tradingTotalAmount);
       const totalQuantitySum = sum(state.currentStock.holdingQuantity, state.tradingStock.tradingQuantity);
       const totalAverage = getAverage(totalAmountSum, totalQuantitySum);
+      state.tradingStock.tradingRor = getRor(state.currentStock.marketPrice, totalAverage);
       state.totalStock.totalAmount = totalAmountSum;
       state.totalStock.totalQuantity = totalQuantitySum;
       state.totalStock.totalAverage = totalAverage;
-      state.totalStock.totalRor = getRor(state.currentStock.marketPrice, totalAverage);
     },
   },
 });

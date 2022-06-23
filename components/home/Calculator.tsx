@@ -49,16 +49,16 @@ const Calculator = () => {
                 theme={valueTextTheme.small}
               />
             </SectionRightLine>
-            <SectionRightLine>
-              <Label>최종 수익률</Label>
-              <ReadOnlyValue
-                value={stockData.totalRor.toFixed(2)}
-                colorTheme={stockData.totalRor > 0 ? valueColorTheme.plus : stockData.totalRor === 0 ? valueColorTheme.inactive : valueColorTheme.minus}
-                theme={valueTextTheme.small}
-                fontWeight={600}
-                unit="%"
-              />
-            </SectionRightLine>
+            {/*<SectionRightLine>*/}
+            {/*  <Label>최종 수익률</Label>*/}
+            {/*  <ReadOnlyValue*/}
+            {/*    value={stockData.totalRor.toFixed(2)}*/}
+            {/*    colorTheme={stockData.totalRor > 0 ? valueColorTheme.plus : stockData.totalRor === 0 ? valueColorTheme.inactive : valueColorTheme.minus}*/}
+            {/*    theme={valueTextTheme.small}*/}
+            {/*    fontWeight={600}*/}
+            {/*    unit="%"*/}
+            {/*  />*/}
+            {/*</SectionRightLine>*/}
             {/*<SectionRightLine>*/}
             {/*  <Label>최종 수익금</Label>*/}
             {/*  <ReadOnlyValue value={0} colorTheme={valueColorTheme.inactive} theme={valueTextTheme.small} />*/}

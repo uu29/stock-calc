@@ -1,7 +1,6 @@
 export const totalStock = {
   totalAverage: "totalAverage",
   totalAmount: "totalAmount",
-  totalRor: "totalRor",
   totalQuantity: "totalQuantity",
 } as const;
 
@@ -10,7 +9,6 @@ export type TotalStockType = typeof totalStock[keyof typeof totalStock];
 export interface ITotalStock {
   totalAverage: number;
   totalAmount: number;
-  totalRor: number;
   totalQuantity: number;
 }
 
@@ -36,6 +34,7 @@ export const tradingStock = {
   tradingPrice: "tradingPrice",
   tradingQuantity: "tradingQuantity",
   tradingTotalAmount: "tradingTotalAmount",
+  tradingRor: "tradingRor",
 } as const;
 
 export type TradingStockType = typeof tradingStock[keyof typeof tradingStock];
@@ -44,6 +43,7 @@ export interface ITradingStock {
   tradingPrice: number;
   tradingQuantity: number;
   tradingTotalAmount: number;
+  tradingRor: number;
 }
 
 export interface HomeState {

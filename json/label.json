@@ -1,7 +1,7 @@
 {
   "totalAverage": "매수 총액",
   "totalAmount":"매수 총액",
-  "totalRor": "수익률",
+  "totalRor": "추매 후 수익률",
   "totalQuantity":"수익금",
   "marketPrice": "현재 시장가",
   "currentTotalAmount": "총 매입 금액",
@@ -10,5 +10,6 @@
   "holdingQuantity": "보유 수량",
   "tradingPrice": "추매 평단가",
   "tradingQuantity": "추매 수량",
-  "tradingTotalAmount": "총 추매 금액"
+  "tradingTotalAmount": "총 추매 금액",
+  "tradingRor": "추매 후 수익률"
 }

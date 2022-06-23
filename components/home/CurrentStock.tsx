@@ -37,7 +37,7 @@ const CurrentStock = () => {
       <SectionRightLine>
         <LabelBlock>{label.currentRor}</LabelBlock>
         <ReadOnlyValue
-          value={stockData.currentRor.toFixed(2)}
+          value={numberWithCommas(parseFloat(stockData.currentRor.toFixed(2)))}
           colorTheme={stockData.currentRor > 0 ? valueColorTheme.plus : stockData.currentRor === 0 ? valueColorTheme.inactive : valueColorTheme.minus}
           theme={valueTextTheme.small}
           fontWeight={600}
