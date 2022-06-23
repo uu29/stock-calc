@@ -3,16 +3,23 @@ import CurrentStock from "./CurrentStock";
 import { valueColorTheme, valueTextTheme } from "./interface";
 import ReadOnlyValue from "./ReadOnlyValue";
 import TradingStock from "./TradingStock";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { State } from "store/slices";
 import { numberWithCommas } from "../../lib/function";
+import { resetAllStock } from "../../store/slices/home/reducer";
 
 const Calculator = () => {
   const stockData = useSelector((state: State) => state.home.totalStock);
+  const dispatch = useDispatch();
+  const handleClickRefresh = () => {
+    dispatch(resetAllStock());
+  };
 
   return (
     <CalculatorContainer>
-      <Refresh type="button">새로고침</Refresh>
+      <Refresh type="button" onClick={handleClickRefresh} title="새로고침">
+        새로고침
+      </Refresh>
       <Form>
         <ul>
           <CurrentStock />

@@ -32,6 +32,11 @@ export const homeSlice = createSlice({
   name: FeatureKey.home,
   initialState,
   reducers: {
+    resetAllStock(state) {
+      state.totalStock = initialState.totalStock;
+      state.currentStock = initialState.currentStock;
+      state.tradingStock = initialState.tradingStock;
+    },
     setCurrentStock(state, action: PayloadAction<SetStockParams>) {
       state.currentStock = { ...state.currentStock, ...action.payload };
       const currentTotalAmount = state.currentStock.purchasePrice * state.currentStock.holdingQuantity;
@@ -60,6 +65,6 @@ export const homeSlice = createSlice({
   },
 });
 
-export const { setCurrentStock, setTradingStock } = homeSlice.actions;
+export const { resetAllStock, setCurrentStock, setTradingStock } = homeSlice.actions;
 
 export default homeSlice.reducer;
