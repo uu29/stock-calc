@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { FeatureKey } from "../../featureKey";
-import { getAverage, getRor, sum } from "../../../lib/function";
+import { getAverage, getRor, sum } from "lib/function";
 import { HomeState } from "./interface";
 
 export const initialState: HomeState = {
