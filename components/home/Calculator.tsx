@@ -55,6 +55,7 @@ const Calculator = () => {
                 value={stockData.totalRor.toFixed(2)}
                 colorTheme={stockData.totalRor > 0 ? valueColorTheme.plus : stockData.totalRor === 0 ? valueColorTheme.inactive : valueColorTheme.minus}
                 theme={valueTextTheme.small}
+                fontWeight={600}
                 unit="%"
               />
             </SectionRightLine>
