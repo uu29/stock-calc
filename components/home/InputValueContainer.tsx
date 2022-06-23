@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { numberWithCommas } from "lib/function";
 import { InputLabel, InputValue, SectionInputLine } from "./CalculatorStyle";
 import { SetStockParams } from "store/slices/home/reducer";
-
-const numRegex = /^\d+$/;
-const commaRegex = /,/g;
+const regex = {
+  float: /^\d*\.?\d*$/,
+  comma: /,/g,
+};
 
 type ChangeCallbackType = ({ params }: SetStockParams) => void;
 
@@ -21,9 +22,9 @@ const InputValueContainer = React.memo(({ inputLabel, inputName, inputValue, cha
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let { name, value } = e.currentTarget;
-    value = value.replace(commaRegex, "");
-    const isNum = numRegex.test(value);
-    if (isNum || value === "") changeCallback({ [name]: Number(value) });
+    value = value.replace(regex.comma, "");
+    const isFloat = regex.float.test(value);
+    if (isFloat || value === "") changeCallback({ [name]: value });
   };
 
   useEffect(() => {

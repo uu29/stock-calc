@@ -25,7 +25,7 @@ export const initialState: HomeState = {
 };
 
 export interface SetStockParams {
-  [key: string]: number;
+  [key: string]: number | string;
 }
 
 export const homeSlice = createSlice({
