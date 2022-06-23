@@ -14,7 +14,7 @@ export const Form = styled.form`
 `;
 
 export const SectionItem = styled.li`
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 `;
 
 export const SectionRightLine = styled.div`
@@ -36,7 +36,7 @@ export const Label = styled.span`
 export const SectionInputLine = styled.div`
   display: flex;
   align-items: center;
-  margin: 1.2rem 0;
+  margin: 1rem 0;
 `;
 
 export const LabelBlock = styled.div`
