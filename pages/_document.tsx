@@ -40,10 +40,10 @@ class MyDocument extends Document {
           <meta name="google" content="notranslate" />
           <link rel="icon" type="image/ico" href="/favicon.ico" />
           <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
-          <link rel="apple-touch-icon" type="image/png" sizes="57x57" href="/apple-touch-icon.png" />
-          <link rel="apple-touch-icon" type="image/png" sizes="72x72" href="/apple-touch-icon.png" />
-          <link rel="apple-touch-icon" type="image/png" sizes="114x114" href="/apple-touch-icon.png" />
-          <link rel="apple-touch-icon" type="image/png" sizes="144x144" href="/apple-touch-icon.png" />
+          {/* <link rel="apple-touch-icon" type="image/png" sizes="57x57" href="/apple-touch-icon.png" /> */}
+          {/* <link rel="apple-touch-icon" type="image/png" sizes="72x72" href="/apple-touch-icon.png" /> */}
+          {/* <link rel="apple-touch-icon" type="image/png" sizes="114x114" href="/apple-touch-icon.png" /> */}
+          {/* <link rel="apple-touch-icon" type="image/png" sizes="144x144" href="/apple-touch-icon.png" /> */}
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         </Head>
