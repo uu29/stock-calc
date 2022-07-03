@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { numberWithCommas} from "lib/function";
+import { numberWithCommas } from "lib/function";
+import { SetStockParams } from "store/slices/home/interface";
 import { InputLabel, InputValue, SectionInputLine } from "./CalculatorStyle";
-import {SetStockParams} from "store/slices/home/interface";
+
 const regex = {
   float: /^\d*\.?\d*$/,
   endWithDot: /\.$/,
@@ -22,14 +23,15 @@ const InputValueContainer = React.memo(({ inputLabel, inputName, inputValue, cha
   const [displayValue, setDisplayValue] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let { name, value } = e.currentTarget;
+    const { name } = e.currentTarget;
+    let { value } = e.currentTarget;
     value = value.replace(regex.comma, "");
     const isFloat = regex.float.test(value);
     const isEndWithDot = regex.endWithDot.test(value);
     let floatNumber = isEndWithDot ? value : parseFloat(value);
     if (isFloat || value === "") {
-      if(value === "") floatNumber = 0;
-      changeCallback({[name]: floatNumber})
+      if (value === "") floatNumber = 0;
+      changeCallback({ [name]: floatNumber });
     }
   };
 
