@@ -10,8 +10,8 @@
     "plugin:prettier/recommended",
     "next/core-web-vitals",
     "eslint:recommended",
-    "plugin:react/recommended",
     "plugin:react/jsx-runtime",
+    "plugin:react/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended"
   ],
@@ -32,12 +32,13 @@
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
     "react/require-default-props": 0,
-    "no-unused-vars": "off",
+    "no-param-reassign": ["error", { "props": false }],
     "no-use-before-define": "off",
+    "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": [
       "error",
       {
-        "varsIgnorePattern": "^AppProps|DocumentContext|State$"
+        "varsIgnorePattern": "^AppProps|DocumentContext|State|PayloadAction|SetStockParams$"
       }
     ],
     "react/react-in-jsx-scope": 0,
