@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { numberWithCommas } from "lib/function";
+import { numberWithCommas} from "lib/function";
 import { InputLabel, InputValue, SectionInputLine } from "./CalculatorStyle";
-import { SetStockParams } from "store/slices/home/reducer";
+import {SetStockParams} from "store/slices/home/interface";
 const regex = {
   float: /^\d*\.?\d*$/,
   endWithDot: /\.$/,
@@ -26,8 +26,11 @@ const InputValueContainer = React.memo(({ inputLabel, inputName, inputValue, cha
     value = value.replace(regex.comma, "");
     const isFloat = regex.float.test(value);
     const isEndWithDot = regex.endWithDot.test(value);
-    const floatNumber = isEndWithDot ? value : parseFloat(value);
-    if (isFloat || value === "") changeCallback({ [name]: floatNumber });
+    let floatNumber = isEndWithDot ? value : parseFloat(value);
+    if (isFloat || value === "") {
+      if(value === "") floatNumber = 0;
+      changeCallback({[name]: floatNumber})
+    }
   };
 
   useEffect(() => {

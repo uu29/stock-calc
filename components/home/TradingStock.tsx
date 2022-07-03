@@ -1,13 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
-import { LabelBlock, SectionItem, SectionRightLine, SectionTitle } from "./CalculatorStyle";
-import { valueColorTheme, valueTextTheme } from "./interface";
 import { State } from "store/slices";
-import { SetStockParams, setTradingStock } from "store/slices/home/reducer";
 import label from "json/label.json";
+import { numberWithCommas } from "lib/function";
+import { tradingStock, TradingStockType, SetStockParams } from "store/slices/home/interface";
+import { setTradingStock } from "store/slices/home/reducer";
 import ReadOnlyValue from "./ReadOnlyValue";
 import InputValueContainer from "./InputValueContainer";
-import { numberWithCommas } from "lib/function";
-import { tradingStock, TradingStockType } from "store/slices/home/interface";
+import { valueColorTheme, valueTextTheme } from "./interface";
+import { LabelBlock, SectionItem, SectionRightLine, SectionTitle } from "./CalculatorStyle";
 
 const TradingStock = () => {
   const stockData = useSelector((state: State) => state.home.tradingStock);

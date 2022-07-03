@@ -1,5 +1,7 @@
 export const numberWithCommas = (x: number) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
+export const checkNumb = (a: unknown) => typeof a === "number";
+
 export const sum = (a: number, b: number) => a + b;
 
 export const getRor = (currentPrice: number, purchasePrice: number) => {

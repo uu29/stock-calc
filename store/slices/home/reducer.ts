@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { FeatureKey } from "../../featureKey";
 import { getAverage, getRor, sum } from "lib/function";
-import { HomeState } from "./interface";
+import { FeatureKey } from "../../featureKey";
+import { HomeState, SetStockParams } from "./interface";
 
 export const initialState: HomeState = {
   totalStock: {
@@ -23,10 +23,6 @@ export const initialState: HomeState = {
     tradingRor: 0,
   },
 };
-
-export interface SetStockParams {
-  [key: string]: number | string;
-}
 
 export const homeSlice = createSlice({
   name: FeatureKey.home,

@@ -6,6 +6,10 @@ export const totalStock = {
 
 export type TotalStockType = typeof totalStock[keyof typeof totalStock];
 
+export interface SetStockParams {
+  [key: string]: number | string;
+}
+
 export interface ITotalStock {
   totalAverage: number;
   totalAmount: number;
