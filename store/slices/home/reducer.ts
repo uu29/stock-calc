@@ -35,25 +35,25 @@ export const homeSlice = createSlice({
     },
     setCurrentStock(state, action: PayloadAction<SetStockParams>) {
       state.currentStock = { ...state.currentStock, ...action.payload };
-      const currentTotalAmount = state.currentStock.purchasePrice * state.currentStock.holdingQuantity;
+      const currentTotalAmount = Number(state.currentStock.purchasePrice) * Number(state.currentStock.holdingQuantity);
       state.currentStock.currentTotalAmount = currentTotalAmount;
-      state.currentStock.currentRor = getRor(state.currentStock.marketPrice * state.currentStock.holdingQuantity, currentTotalAmount);
-      const totalAmountSum = sum(currentTotalAmount, state.tradingStock.tradingTotalAmount);
-      const totalQuantitySum = sum(state.currentStock.holdingQuantity, state.tradingStock.tradingQuantity);
+      state.currentStock.currentRor = getRor(Number(state.currentStock.marketPrice) * Number(state.currentStock.holdingQuantity), currentTotalAmount);
+      const totalAmountSum = sum(currentTotalAmount, Number(state.tradingStock.tradingTotalAmount));
+      const totalQuantitySum = sum(Number(state.currentStock.holdingQuantity), Number(state.tradingStock.tradingQuantity));
       const totalAverage = getAverage(totalAmountSum, totalQuantitySum);
       state.totalStock.totalAmount = totalAmountSum;
       state.totalStock.totalQuantity = totalQuantitySum;
       state.totalStock.totalAverage = totalAverage;
-      if (state.tradingStock.tradingTotalAmount > 0) state.tradingStock.tradingRor = getRor(state.currentStock.marketPrice, totalAverage);
+      if (state.tradingStock.tradingTotalAmount > 0) state.tradingStock.tradingRor = getRor(Number(state.currentStock.marketPrice), totalAverage);
     },
     setTradingStock(state, action: PayloadAction<SetStockParams>) {
       state.tradingStock = { ...state.tradingStock, ...action.payload };
       const tradingTotalAmount = state.tradingStock.tradingPrice * state.tradingStock.tradingQuantity;
       state.tradingStock.tradingTotalAmount = tradingTotalAmount;
-      const totalAmountSum = sum(state.currentStock.currentTotalAmount, tradingTotalAmount);
-      const totalQuantitySum = sum(state.currentStock.holdingQuantity, state.tradingStock.tradingQuantity);
+      const totalAmountSum = sum(Number(state.currentStock.currentTotalAmount), Number(tradingTotalAmount));
+      const totalQuantitySum = sum(Number(state.currentStock.holdingQuantity), Number(state.tradingStock.tradingQuantity));
       const totalAverage = getAverage(totalAmountSum, totalQuantitySum);
-      state.tradingStock.tradingRor = getRor(state.currentStock.marketPrice, totalAverage);
+      state.tradingStock.tradingRor = getRor(Number(state.currentStock.marketPrice), totalAverage);
       state.totalStock.totalAmount = totalAmountSum;
       state.totalStock.totalQuantity = totalQuantitySum;
       state.totalStock.totalAverage = totalAverage;
