@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { numberWithCommas } from "lib/function";
 import { SetStockParams } from "store/slices/home/interface";
+import regex from "utils/regex";
 import { InputLabel, InputValue, SectionInputLine } from "./CalculatorStyle";
-
-const regex = {
-  float: /^\d*\.?\d*$/,
-  endWithDot: /\.$/,
-  comma: /,/g,
-};
 
 type ChangeCallbackType = ({ params }: SetStockParams) => void;
 

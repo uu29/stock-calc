@@ -1,4 +1,12 @@
-export const numberWithCommas = (x: number) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+export const numberWithCommas = (x: number) => {
+  const regex = /\B(?=(\d{3})+(?!\d))/g;
+  if (x % 1 !== 0) {
+    // 소수점 이하는 comma 처리하지 않음
+    const [int, float] = x.toString().split(".");
+    return `${int.toString().replace(regex, ",")}.${float}`;
+  }
+  return x.toString().replace(regex, ",");
+};
 
 export const checkNumb = (a: unknown) => typeof a === "number";
 
