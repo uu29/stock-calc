@@ -27,11 +27,8 @@ const InputValueContainer = React.memo(({ inputLabel, inputName, inputValue, cha
     let { value } = e.currentTarget;
     value = value.replace(regex.comma, "");
     const isFloat = regex.float.test(value);
-    const isEndWithDot = regex.endWithDot.test(value);
-    let floatNumber = isEndWithDot ? value : parseFloat(value);
     if (isFloat || value === "") {
-      if (value === "") floatNumber = 0;
-      changeCallback({ [name]: floatNumber });
+      changeCallback({ [name]: value });
     }
   };
 
