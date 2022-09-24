@@ -7,7 +7,7 @@ const Home = () => {
     <>
       <MetaHead />
       <main>
-        <AppTitle>stock-calc</AppTitle>
+        <AppTitle>평단가 계산기</AppTitle>
         <MainDescription>
           주식/코인 <Strong>물타기 계산기</Strong>입니다.
           <br />
@@ -22,7 +22,7 @@ const Home = () => {
 };
 
 const AppTitle = styled.h1`
-  margin: 1rem;
+  margin: 2rem;
   font-size: 2.2rem;
   font-weight: 600;
   text-align: center;
